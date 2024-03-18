@@ -23,7 +23,7 @@ def main(args):
             rlt.save(os.path.join(args.output, f'{basename}T{idx}.png'))
 
         # save the smallest image which the shortest edge is 400
-        if width < height:
+        if width < height :
             ratio = height / width
             width = shortest_edge
             height = int(width * ratio)
@@ -40,8 +40,8 @@ if __name__ == '__main__':
     It is now used for DF2K dataset (DIV2K + Flickr 2K)
     """
     parser = argparse.ArgumentParser()
-    parser.add_argument('--input', type=str, default='datasets/DF2K/DF2K_HR', help='Input folder')
-    parser.add_argument('--output', type=str, default='datasets/DF2K/DF2K_multiscale', help='Output folder')
+    parser.add_argument('--input', type=str, default='dataset/dataHR', help='Input folder')
+    parser.add_argument('--output', type=str, default='dataset/data_multiscale', help='Output folder')
     args = parser.parse_args()
 
     os.makedirs(args.output, exist_ok=True)
